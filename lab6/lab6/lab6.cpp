@@ -2,62 +2,22 @@
 //
 
 #include <iostream>
+
 #include "Flight.h"
 #include "Repo.h"
+#include "Service.h"
 #include "tests.h"
+#include "UI.h"
 
 
 using namespace std;
 
+
 int main()
 {
+    UI u;
     all_tests();
-    Repo r;
-    char op = ' ';
-    while (true)
-    {
-        cout << "1. Add flight." << endl;
-        cout << "2. Show all flights. " << endl;
-        cout << "x. Exit. " << endl;
-        cout << "Insert option: ";
-        cin >> op;
-        cout << endl;
-        switch (op)
-        {
-            case '1':
-            {
-                int num_s, num_f;
-                char* name = new char[50];
-                cout << "Introduceti numarul zborului: ";
-                cin >> num_f;
-                cout << "Introduceti numele: ";
-                cin >> name;
-                cout << "Introduceti numarul locului: ";
-                cin >> num_s;
-                Flight f(num_f, name, num_s);
-                r.add(f);
-                cout << "Flight added successfully!" << endl;
-                cout << endl;
-                break;
-            }
-            case '2':
-            {
-                list<Flight> res = r.get_all();
-                while (!res.empty())
-                {
-                    cout << res.front() << endl;
-                    res.pop_front();
-                }
-                cout << endl<<endl;
-                break;
-            }
-            case 'x':
-            {
-                exit(0);
-                break;
-            }
-        }
-    }
+    u.UwU();
     return 0;
 }
 
