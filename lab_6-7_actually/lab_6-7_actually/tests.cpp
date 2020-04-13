@@ -249,6 +249,21 @@ void test_get_all_cart()
 	assert(s.get_all_cart().front() == f1);
 }
 
+void test_update_booking()
+{
+	Service <Repo<Flight>> s;
+	char* name1 = new char[4];
+	strcpy_s(name1, strlen("Ion") + 1, "Ion");
+	Flight f1(1, name1, 1);
+	Flight f2(1, name1, 2);
+	s.add_to_cart(f1);
+
+	assert(s.update_booking(f1, 1) == -2);
+	assert(s.update_booking(f2, 3) == -1);
+	assert(s.update_booking(f1, 45) == -3);
+	assert(s.update_booking(f1, 22) == 0);
+}
+
 void all_tests()
 {
 	//Flight
@@ -277,6 +292,7 @@ void all_tests()
 	test_get_cart_size();
 	test_update_s();
 	test_del_s();
-	test_add_to_cart();
-	test_get_all_cart();
+	//test_add_to_cart();
+	//test_get_all_cart();
+	//test_update_booking();
 }

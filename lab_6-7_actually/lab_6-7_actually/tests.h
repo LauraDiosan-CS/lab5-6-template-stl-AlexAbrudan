@@ -33,6 +33,7 @@ void test_update_s();
 void test_del_s();
 void test_add_to_cart();
 void test_get_all_cart();
+void test_update_booking();
 
 //All tests
 void all_tests();
